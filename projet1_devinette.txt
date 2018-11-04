@@ -1,0 +1,65 @@
+import random
+
+class devinette:
+    
+    #Essai de self
+    """nombre_partie = 0
+    nombre_partie_autorise = 3
+    tentative_actuel = 0
+    tentative_autorise =  3
+    score_actuel = 0
+    valeur = 0
+    choix = 0
+    
+    def __init__(self, nombre_partie, nombre_partie_autorise, tentative_actuel, tentative_autorise,score_actuel, valeur, choix):
+        self.nombre_partie = nombre_partie
+        self.nombre_partie_autorise = nombre_partie_autorise
+        self.tentative_actuel = tentative_actuel
+        self.tentative_autorise = tentative_autorise
+        self.score_actuel = score_actuel
+        self.valeur = valeur
+        self.choix = choix"""
+        
+    def tirage():
+        valeur=random.randint(1,10)
+        return valeur
+
+    def choix():
+        choix=int(input("----> Veuillez choisir un nombre entier compris entre 1 et 10 : "))
+        return choix
+
+    print("Ceci est un jeu de devinette,veuillez choisir un nombre entier entre 1 et 10 :")
+    nombre_partie = 0
+    nombre_partie_autorise = 3
+    tentative_actuel = 0
+    tentative_autorise = 3
+    score_actuel = 0
+        
+    while(nombre_partie < nombre_partie_autorise):
+        valeur_tirage = tirage()
+        print("---- Partie numero {} ----".format((nombre_partie+1)))
+        print("valeur tirage = ", valeur_tirage)
+        print("\n")
+        
+        tentative_actuel = 0
+        while (tentative_actuel < tentative_autorise):
+            nombre_choisi = choix()
+    
+            if nombre_choisi == valeur_tirage:
+                print("\nBravo ! Score augmenté.\n")
+                score_actuel +=1
+                break
+    
+            else:
+                print("\nDommage ... Veuillez retenter le jeu.")
+                tentative_actuel += 1
+                print("Nombre de tentatives actuel : ", tentative_actuel)
+                print("\n")
+    
+    
+        nombre_partie += 1
+        print("-------Partie termine ! Score actuel : ", score_actuel)
+        print("-------Nombre de parties faite : ", nombre_partie)
+        print("-------Partie ", nombre_partie, " terminé.\n")
+    
+    print("Jeu termine ! Score finale : {}".format(score_actuel))
